@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import "ol/ol.css";
-import { map } from "../map/map";
+import { map } from "../../map/map";
 
 // export function useMap() {
 //   const mapRef = useRef<Map>();

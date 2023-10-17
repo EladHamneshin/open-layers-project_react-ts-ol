@@ -3,7 +3,7 @@ import StyledTopBar from "./StyledTopBar";
 import MenuIcon from '@mui/icons-material/Menu';
 
 interface AppTopBarProps{
-    open?: boolean;
+    open: boolean;
     drawerWidth: number;
     handleDrawerOpen:()=>void;
 }

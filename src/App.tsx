@@ -1,11 +1,9 @@
 import './App.css'
-import RightDrawer from './components/RightDrawer'
+import RightDrawer from './components/Drawer/RightDrawer'
 import { useState } from 'react';
 import { Box, CssBaseline } from '@mui/material';
-import OLMapContainer from './components/OLMapContainer';
-import OLMap from './components/OLMap';
-import DrawerHeader from './components/DrawerHeader';
-import AppTopBar from './components/AppTopBar';
+import AppTopBar from './components/TopBar/AppTopBar';
+import OLMapMain from './components/OLMap/OLMapMain';
 
 
 function App() {
@@ -16,10 +14,7 @@ function App() {
       <Box sx={{ display: 'flex', height:"93%"}}>
         <CssBaseline />
         <AppTopBar drawerWidth={drawerWidth} open={open} handleDrawerOpen={()=>setOpen(true)}/>
-        <OLMapContainer drawerWidth={drawerWidth} open={open}>
-          <DrawerHeader />
-          <OLMap/>
-        </OLMapContainer>
+        <OLMapMain drawerWidth={drawerWidth} open={open}/>
         <RightDrawer open={open} drawerWidth={drawerWidth} handleDrawerClose={()=>setOpen(false)}/>
       </Box>
   )

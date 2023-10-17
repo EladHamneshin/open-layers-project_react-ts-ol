@@ -1,12 +1,12 @@
 import { styled } from "@mui/material";
 
-interface OLMapContainerProps{
+interface StyledMainProps{
   open?: boolean;
   drawerWidth: number;
 }
 
-const OLMapContainer = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })
-<OLMapContainerProps>(({ theme, open, drawerWidth }) => ({
+const StyledMain = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })
+<StyledMainProps>(({ theme, open, drawerWidth }) => ({
   flexGrow: 1,
   padding: theme.spacing(0),
   transition: theme.transitions.create('margin', {
@@ -24,4 +24,4 @@ const OLMapContainer = styled('main', { shouldForwardProp: (prop) => prop !== 'o
   position: 'relative',
 }));
 
-export default OLMapContainer;
+export default StyledMain;
