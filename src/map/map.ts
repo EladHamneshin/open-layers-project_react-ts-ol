@@ -12,7 +12,6 @@ import markerLayer, { addMarker, removeMarker } from "./markerLayer";
 const mousePositionControl = new MousePosition({
     coordinateFormat: createStringXY(4),
     projection: 'EPSG:4326',
-    target: document.getElementById('mouse-position')!,
 });
 
 export const map = new Map({
