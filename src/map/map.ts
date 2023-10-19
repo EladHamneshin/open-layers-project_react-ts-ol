@@ -1,18 +1,13 @@
 import { Feature, Map } from "ol";
 import View from "ol/View";
 import {defaults as defaultControls} from 'ol/control.js';
-import MousePosition from 'ol/control/MousePosition.js';
 import { defaults as interactionDefaults } from "ol/interaction/defaults";
 import { fromLonLat, toLonLat } from "ol/proj";
 import { Point } from "ol/geom";
-import { createStringXY } from "ol/coordinate";
-import tileLayer from "./tileLayer";
-import markerLayer, { addMarker, removeMarker } from "./markerLayer";
+import tileLayer from "./layers/tileLayer";
+import markerLayer, { addMarker, removeMarker } from "./layers/markerLayer";
+import mousePositionControl from "./controls/mousePsititonControl";
 
-const mousePositionControl = new MousePosition({
-    coordinateFormat: createStringXY(4),
-    projection: 'EPSG:4326',
-});
 
 export const map = new Map({
   target: "map",
