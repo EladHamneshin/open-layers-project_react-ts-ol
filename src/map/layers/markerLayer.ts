@@ -6,41 +6,42 @@ import { Point } from "ol/geom";
 import { Feature } from "ol";
 import { fromLonLat } from "ol/proj";
 
+//define marker layer with assets/marker.svg as icon
 const markerLayer = new VectorLayer({
     source: new VectorSource({
-        features:[
-          new Feature({
-            geometry: new Point(fromLonLat([ 35.217018, 31.771959]))
-        })
+        features: [
+            new Feature({
+                geometry: new Point(fromLonLat([35.217018, 31.771959]))
+            })
         ]
     }),
     style: new Style({
         image: new Icon({
             anchor: [0.5, 1],
             crossOrigin: 'anonymous',
-            src: 'https://docs.maptiler.com/openlayers/default-marker/marker-icon.png',
+            src: "src/assets/marker.svg",
         })
     })
 });
 
 
-const addMarker = (marker: Feature<Point>)=>{
+const addMarker = (marker: Feature<Point>) => {
     const source = markerLayer.getSource()
-    
-    if(!source)
+
+    if (!source)
         return
 
     source.addFeature(marker)
 }
 
-const removeMarker = (marker: Feature<Point>)=>{
+const removeMarker = (marker: Feature<Point>) => {
     const source = markerLayer.getSource()
-    
-    if(!source)
+
+    if (!source)
         return
 
     source.removeFeature(marker)
 }
 
 export default markerLayer;
-export {addMarker, removeMarker}
+export { addMarker, removeMarker }

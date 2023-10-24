@@ -7,16 +7,19 @@ import { Point } from "ol/geom";
 import tileLayer from "./layers/tileLayer";
 import markerLayer, { addMarker, removeMarker } from "./layers/markerLayer";
 import mousePositionControl from "./controls/mousePsititonControl";
+import MarkerControl from "./controls/markerControl";
 
+
+const ma = new MarkerControl(document.getElementById('map')!);
 
 export const map = new Map({
   target: "map",
   layers: [tileLayer, markerLayer],
   view: new View({
     center: fromLonLat([ 35.217018, 31.771959]),
-    zoom: 7
+    zoom: 7,
   }),
-  controls: defaultControls().extend([mousePositionControl]),
+controls: defaultControls().extend([mousePositionControl, ma]),
   interactions: interactionDefaults({})
 });
 
